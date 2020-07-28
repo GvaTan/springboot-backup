@@ -1,0 +1,13 @@
+server:
+  port: 7781
+
+spring:
+  application:
+    name: user-provider
+    
+eureka:
+  client:
+    service-url:
+      defaultZone: http://anets:2011199033@localhost:7776/eureka/
+  
+ 

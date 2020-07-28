@@ -1,0 +1,14 @@
+/**
+ * 
+ */
+package top.anets.feign;
+
+import top.anets.api.service.MemberService;
+
+/**
+ * @author Administrator
+ *
+ */
+public interface MemberFeign extends MemberService{
+
+}

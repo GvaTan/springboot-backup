@@ -1,0 +1,4 @@
+spring.datasource.url=jdbc:mysql://120.55.95.79:3306/ayun?characterEncoding=utf-8
+spring.datasource.username=root
+spring.datasource.password=2011199033@mysql
+mybatis.mapper-locations=classpath:/mapper/*.xml

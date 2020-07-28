@@ -1,0 +1,15 @@
+/**
+ * 
+ */
+package top.anets;
+
+import org.springframework.stereotype.Controller;
+
+/**
+ * @author Administrator
+ *
+ */
+@Controller
+public class UserController {
+    
+}

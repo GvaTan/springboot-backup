@@ -1,0 +1,14 @@
+/**
+ * 
+ */
+package top.anets.interceptor;
+
+import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
+
+/**
+ * @author Administrator
+ *
+ */
+public class AccessIntercaptor extends HandlerInterceptorAdapter{
+
+}

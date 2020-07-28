@@ -1,0 +1,29 @@
+/**
+ * 
+ */
+package top.anets.vo;
+
+import lombok.Data;
+
+/**
+ * @author Administrator
+ *
+ */
+@Data
+public class Result {
+    private Boolean success=true;
+    private String msg="ok";
+    private Object data;
+	/**
+	 * @param success
+	 * @param msg
+	 * @param data
+	 */
+	public Result(Boolean success, String msg, Object data) {
+		super();
+		this.success = success;
+		this.msg = msg;
+		this.data = data;
+	}
+    
+} 

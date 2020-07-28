@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package top.anets.controller;
+
+/**
+ * @author Administrator
+ *
+ */
+public class LoginController {
+
+}

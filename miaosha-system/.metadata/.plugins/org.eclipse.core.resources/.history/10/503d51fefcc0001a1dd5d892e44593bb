@@ -1,0 +1,20 @@
+/**
+ * 
+ */
+package top.anets.redis;
+
+/**
+ * @author Administrator
+ *
+ */
+public enum RedisKey {
+	USER("user:",0),ITEM("item:",30);
+
+	/**
+	 * @param string
+	 * @param i
+	 */
+	RedisKey(String prefix, int seconds) {
+		// TODO Auto-generated constructor stub
+	}
+}

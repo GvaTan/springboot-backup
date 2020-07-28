@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package top.anets.aspect;
+
+/**
+ * @author Administrator
+ *
+ */
+public class LogAspect {
+
+}

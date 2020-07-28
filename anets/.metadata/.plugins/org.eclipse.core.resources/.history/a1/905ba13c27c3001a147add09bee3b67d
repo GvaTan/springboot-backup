@@ -1,0 +1,164 @@
+package top.anets.payTest;
+
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.google.gson.Gson;
+
+import top.anets.domain.Pay;
+import top.anets.utils.CommonUtils;
+import top.anets.utils.HttpUtils;
+import top.anets.utils.WXPayUtil;
+import top.anets.utils.WeChat;
+
+/**
+ * @author Administrator
+ * 微信jspai支付测试
+ */
+@Controller
+@RequestMapping("/test")
+public class WxJsapiPayTest {
+	@RequestMapping("/pay")
+	@ResponseBody
+	public String pay(String code) {
+		//拥有了传递来的code
+		Pay pay = new Pay();
+		pay.setCode(code);
+
+		//获取openid
+		String urlstr="https://api.weixin.qq.com/sns/oauth2/access_token?appid="+pay.getAppid()+"&secret="+pay.getSecret()+"&code="+code+"&grant_type=authorization_code";
+		String string = HttpUtils.get(urlstr);
+		System.out.println("获得的openid"+string);
+		Gson gson = new Gson();
+		Map map = gson.fromJson(string, Map.class);
+		String openid = (String) map.get("openid");
+
+		//测试用
+		if(openid==null){
+			//ServletActionContext.getResponse().getWriter().write("[openid为空]");
+			openid="souaitoysyha";
+		}
+		else{
+			//ServletActionContext.getResponse().getWriter().write("[openid不为空]"+ openid);
+		}
+		pay.setOpenid(openid);
+		//生成随机串
+		String nonceStr = WXPayUtil.generateNonceStr();
+		pay.setNonce_str(nonceStr);
+
+		//设置回调地址
+		pay.setNotify_url("http://souainet.top/soai/ysys_pay");
+		System.out.println("随机串"+nonceStr);
+		//获取ip地址
+		String ip = CommonUtils.getHostIP();
+		pay.setSpbill_create_ip(ip);
+		System.out.println("ip"+ip);
+		//设置支付名称
+		pay.setBody("DB-LS");
+		//设置唯一的订单号
+		pay.setOut_trade_no(String.valueOf(new Date().getTime()));
+
+
+		//设置支付金额
+		pay.setTotal_fee(59800);
+
+		//生成签名
+		HashMap<String, String> data = new HashMap<>();
+		data.put("appid", pay.getAppid());
+		data.put("body", pay.getBody());
+		data.put("mch_id", pay.getMch_id());
+		data.put("nonce_str", pay.getNonce_str());
+		data.put("notify_url", pay.getNotify_url());
+		data.put("openid", pay.getOpenid());
+		data.put("out_trade_no", pay.getOut_trade_no());
+		//data.put("sign_type", "MD5");
+		data.put("spbill_create_ip",pay.getSpbill_create_ip());
+		data.put("total_fee", pay.getTotal_fee().toString());
+		data.put("trade_type", pay.getTrade_type());
+		//获取密钥
+		String key=pay.getPaternerKey();
+		System.out.println("key"+key);
+		String xml=null;
+		
+		try {
+			//获取签名
+			//ServletActionContext.getResponse().getWriter().write("get signature|||");
+			System.out.println(pay.toString());
+			String signature = WXPayUtil.generateSignature(data, key);
+			System.out.println(signature);
+			//ServletActionContext.getResponse().getWriter().write("signature:"+signature);
+			pay.setSign(signature);
+			data.put("sign", signature);
+			System.out.println("签名数据准备："+data.toString());
+			//ServletActionContext.getResponse().getWriter().write("converting maptoxml|||");
+//			 xml = WXPayUtil.mapToXml(data);
+			xml= CommonUtils.map2Xml(data);
+			//ServletActionContext.getResponse().getWriter().write("xml------------------------<br>"+xml+"<br>");
+			System.out.println("xml------------------------<br>"+xml+"<br>");
+		} catch (Exception e) {
+			System.out.println("获取签名失败");
+			//ServletActionContext.getResponse().getWriter().write("appid:"+pay.getAppid()+"mch_id"+pay.getMch_id()+"openid:"+ pay.getOpenid()+"|||");
+			//ServletActionContext.getResponse().getWriter().write("info:signatur failed|||");
+			//ServletActionContext.getResponse().getWriter().write("errorinfo:"+e.getMessage());
+			e.printStackTrace();
+		}
+		
+		if(xml==null){
+			 //ServletActionContext.getResponse().getWriter().write("|||stop");
+			 return null;
+		}
+		String results = HttpUtils.postXml("https://api.mch.weixin.qq.com/pay/unifiedorder", xml);
+       if(results!=null){
+       	//ServletActionContext.getResponse().getWriter().write("|||||||||||||||||||||||||||||||||||||2 crawl result:"+results+"aaaaaaaaaaaaaaa");
+       	String zz=results;
+       	//ServletActionContext.getResponse().getWriter().write("<br>|||||||||||||||||||||||||||||||||||||3 crawl result:"+zz.replace("<","=")+"aaaaaaaaaaaaaaa");
+       }else{
+       	//ServletActionContext.getResponse().getWriter().write("|||||||||||||||||||||||||||||||||||||2 crawl result:"+"为空值");
+       }
+		System.out.println("爬虫结果："+results);
+		int start = results.indexOf("<prepay_id><![CDATA[")+20;
+	    int end = results.indexOf("]]></prepay_id>");
+	    String substring = results.substring(start, end);//上线需要打开
+		String prepay_id =substring;
+		System.out.println("prepay_id====="+prepay_id);
+			//ServletActionContext.getResponse().getWriter().write("||||prepay_id====="+prepay_id+"||||");
+			//封装payInfo
+		PayInfo payInfo = new PayInfo();
+		payInfo.setAppId(pay.getAppid());
+		payInfo.setNonceStr(WXPayUtil.generateNonceStr());
+		payInfo.setTimeStamp(WeChat.getTimestamp());
+		
+		//payInfo.setPrepay_id(prepay_id);
+		payInfo.setPackages("prepay_id="+prepay_id);
+		payInfo.setSignType("MD5");
+		
+		HashMap<String, String> map2 = new HashMap<>();
+		
+		map2.put("appId",payInfo.getAppId());
+		map2.put("timeStamp", payInfo.getTimeStamp());
+		map2.put("nonceStr", payInfo.getNonceStr());
+		map2.put("signType", payInfo.getSignType());
+		map2.put("package", payInfo.getPackages());
+		
+		
+		String signature=null;
+		try {
+			signature = WXPayUtil.generateSignature(map2, pay.getPaternerKey());
+			
+		} catch (Exception e) {
+			//ServletActionContext.getResponse().getWriter().write("payInfo生成签名异常");
+			
+		}
+		map2.put("paySign", signature);
+		payInfo.setPaySign(signature);
+		
+		
+		
+		return null;
+	}
+}

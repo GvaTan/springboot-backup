@@ -1,0 +1,5 @@
+package top.anets.entity;
+
+public class Log {
+
+}

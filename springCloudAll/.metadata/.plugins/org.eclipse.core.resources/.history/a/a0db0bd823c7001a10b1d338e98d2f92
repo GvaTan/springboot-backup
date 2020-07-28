@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package top.anets.adapter;
+
+/**
+ * @author Administrator
+ *
+ */
+public interface MessageAdapter {
+
+}

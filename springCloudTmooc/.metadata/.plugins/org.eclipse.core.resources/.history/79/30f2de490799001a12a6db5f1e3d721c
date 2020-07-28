@@ -1,0 +1,22 @@
+/**
+ * 
+ */
+package top.anets.web;
+
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+import top.anets.vo.Result;
+
+/**
+ * @author Administrator
+ *
+ */
+@RestControllerAdvice
+public class GlobalExceptionHandler {
+      @ExceptionHandler(RuntimeException.class)
+      public Result doHandlerRuntimeException(RuntimeException e) {
+    	  e.printStackTrace();
+    	  return new Result(false,e.getMessage(), null);
+      }
+}

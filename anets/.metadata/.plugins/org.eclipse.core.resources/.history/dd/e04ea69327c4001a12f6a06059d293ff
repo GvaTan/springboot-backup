@@ -1,0 +1,44 @@
+/**
+ * 
+ */
+package top.anets.demo;
+
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+
+import org.elasticsearch.client.IndicesAdminClient;
+import org.elasticsearch.client.transport.TransportClient;
+import org.elasticsearch.common.settings.Settings;
+import org.elasticsearch.common.transport.TransportAddress;
+import org.elasticsearch.transport.client.PreBuiltTransportClient;
+
+/**
+ * es连接测试
+ * @author Administrator
+ *
+ */
+public class EsDemo {
+   private TransportClient client = null;
+   
+   
+   public void getConnection() throws Exception {
+	   client = new PreBuiltTransportClient(Settings.EMPTY)
+	   .addTransportAddress(new TransportAddress(InetAddress.getByName("140.143.122.115"),9200));
+   }
+   
+   
+   public void addIndex() {
+	   IndicesAdminClient indices = client.admin().indices();
+	   indices.prepareCreate("testIndex").get();
+	   
+	   client.close();
+   }
+   
+   
+   public static void main(String[] args) throws Exception {
+	   EsDemo demo = new EsDemo();
+	   demo.getConnection();
+//	   demo.addIndex();
+	   
+}
+}

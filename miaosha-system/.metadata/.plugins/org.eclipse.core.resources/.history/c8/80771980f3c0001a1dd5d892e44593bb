@@ -1,0 +1,22 @@
+/**
+ * 
+ */
+package top.anets.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+/**
+ * @author Administrator
+ * 防刷限流模拟
+ * 主要是学习对注释的使用
+ */
+@Controller
+public class UserController {
+    @RequestMapping("/test")
+    @ResponseBody
+    public String test() {
+    	return "hellow";
+    }
+}

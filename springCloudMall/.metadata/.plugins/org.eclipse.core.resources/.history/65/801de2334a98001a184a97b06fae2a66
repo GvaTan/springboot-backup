@@ -1,0 +1,30 @@
+/**
+ * 
+ */
+package top.anets.config;
+
+//import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
+import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+/**
+ * @author Administrator
+ *
+ */
+@Configuration
+public class SpringShiroConfig {
+    @Bean
+    public ShiroFilterFactoryBean shiroFilterFactoryBean() {
+    	ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
+    	
+    	return shiroFilterFactoryBean;
+    }
+    
+    
+    @Bean
+    public SecurityManager securityManager() {
+    	DefaultWebSecurityManager sManager=new DefaultWebSecurityManager();
+       return null;
+    }
+}

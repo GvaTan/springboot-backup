@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package com.cloud.config;
+
+/**
+ * @author Administrator
+ *
+ */
+public class WebSecurityConfig {
+
+}

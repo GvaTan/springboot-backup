@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: gateway-zuul
+  cloud:
+    config:
+      uri: http://localhost:7740     #配置服务地址
+      profile: dev          #版本 
+      label: springCloud    #分支
+    
+  

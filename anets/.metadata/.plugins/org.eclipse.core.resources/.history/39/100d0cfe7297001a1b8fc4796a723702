@@ -1,0 +1,36 @@
+<!-- Horizontal Form -->
+ <div class="box box-info">
+     sssssssssssssssssss
+    </div>
+<script type="text/javascript">
+   $(function(){
+	   $(".box-footer")
+	   .on("click",".btn-cancel",doCancel)
+	   .on("click",".btn-save",doUpdateObject)
+   });
+   function doCancel(){
+	   $("#mainContentId").html("");
+   }
+   function doUpdateObject(){
+	   //1.获取用户提交数据
+	   var params={pwd:$("#pwdId").val(),
+	              newPwd:$("#newPwdId").val(),
+	              cfgPwd:$("#cfgPwdId").val()
+	   }
+	   //2.定义请求的url
+	   var url="user/doUpdatePassword"
+	   //3.异步提交请求,执行更新操作
+	   $.post(url,params,function(result){
+		    if(result.state==1){
+			 alert(result.message);
+			//location.href="doLoginUI?t="+Math.random();
+			 location.href="doLogout?t="+Math.random();
+		    }else{
+			 alert(result.message);
+		    }
+	   })
+   }
+</script>
+
+    
+    

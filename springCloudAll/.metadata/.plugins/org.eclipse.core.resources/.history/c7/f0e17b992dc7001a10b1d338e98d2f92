@@ -1,0 +1,17 @@
+/**
+ * 
+ */
+package top.anets.feign;
+
+import org.springframework.cloud.openfeign.FeignClient;
+
+import top.anets.api.service.MemberService;
+
+/**
+ * @author Administrator
+ *
+ */
+@FeignClient("member-service")
+public interface MemberFeign extends MemberService{
+
+}

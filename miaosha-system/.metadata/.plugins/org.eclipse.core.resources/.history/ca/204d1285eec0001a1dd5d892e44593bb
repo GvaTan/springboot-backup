@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package com.imooc.miaosha.config;
+
+/**
+ * @author Administrator
+ *
+ */
+public class SpringWebConfig {
+
+}

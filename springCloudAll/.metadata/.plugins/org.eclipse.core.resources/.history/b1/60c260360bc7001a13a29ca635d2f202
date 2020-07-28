@@ -1,0 +1,22 @@
+/**
+ * 
+ */
+package top.anets.api.service.impl;
+
+import java.util.Map;
+
+import top.anets.api.service.TestApiService;
+
+/**
+ * @author Administrator
+ *
+ */
+public class TestApiServiceImpl implements TestApiService{
+
+	@Override
+	public Map<String, Object> test(Integer id, String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

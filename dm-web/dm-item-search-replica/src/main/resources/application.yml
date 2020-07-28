@@ -1,0 +1,23 @@
+server:
+  port: 8341
+  tomcat:
+    uri-encoding: utf-8
+spring:
+  application:
+    name: dm-item-search-replica
+logging:
+  level: debug
+eureka:
+  client:
+    service-url:
+      defaultZone: http://root:123456@192.168.9.151:7776/eureka/
+
+elasticsearch:
+  ip: 192.168.9.151
+  port: 8300
+  clusterName: elasticsearch-application
+
+lastUpdateTimeFile:
+  E:/dm_last_update_File
+
+moduleName: dm-item

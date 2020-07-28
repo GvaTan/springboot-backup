@@ -1,0 +1,26 @@
+/**
+ * 
+ */
+package top.anets.enumeration;
+
+/**
+ * @author Administrator
+ *
+ */
+public enum Color {
+    KEY("item","user");
+
+	
+	
+	
+	/**
+	 * @param string
+	 * @param string2
+	 */
+	Color(String string, String string2) {
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+	
+}

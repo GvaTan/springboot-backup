@@ -1,0 +1,29 @@
+/**
+ * 
+ */
+package top.anets.enumeration;
+
+/**
+ * @author Administrator
+ *
+ */
+public enum Color {
+    RED(255,0,0),BULE(0,255,0),GREEN(0, 0, 255);
+
+	/**
+	 * @param i
+	 * @param j
+	 * @param k
+	 */
+	Color(int r, int g, int b) {
+		// TODO Auto-generated constructor stub
+	}
+
+	
+	
+	
+	
+	
+	
+	
+}

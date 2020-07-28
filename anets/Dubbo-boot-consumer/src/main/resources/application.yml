@@ -1,0 +1,9 @@
+server:
+  port: 8082
+dubbo:
+  scan:
+    basePackages: top.anets
+  application:
+    name: consumer-user   #定义消费者名称
+  registry:               #注册中心地址
+    address: zookeeper://140.143.122.115:2181

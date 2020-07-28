@@ -1,0 +1,21 @@
+/**
+ * 
+ */
+package top.anets.api.service.impl;
+
+import top.anets.api.service.MemberService;
+import top.anets.entity.User;
+
+/**
+ * @author Administrator
+ *
+ */
+public class MemberServiceImpl implements MemberService{
+
+	@Override
+	public User findUserById(Long userId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

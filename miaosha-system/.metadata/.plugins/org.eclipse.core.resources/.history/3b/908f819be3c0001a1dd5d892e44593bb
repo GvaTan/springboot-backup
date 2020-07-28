@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package top.anets.annotation;
+
+/**
+ * @author Administrator
+ *
+ */
+public class AccessLimit {
+
+}

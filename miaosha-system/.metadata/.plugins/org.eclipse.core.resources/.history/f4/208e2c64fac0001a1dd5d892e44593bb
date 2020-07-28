@@ -1,0 +1,26 @@
+/**
+ * 
+ */
+package top.anets.enumeration;
+
+/**
+ * @author Administrator
+ *
+ */
+public enum Redis {
+    KEY("item","user");
+
+	
+	
+	
+	/**
+	 * @param string
+	 * @param string2
+	 */
+	Redis(String string, String string2) {
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+	
+}

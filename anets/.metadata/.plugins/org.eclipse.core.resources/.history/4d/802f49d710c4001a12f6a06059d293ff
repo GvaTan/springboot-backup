@@ -1,0 +1,27 @@
+/**
+ * 
+ */
+package top.anets.demo;
+
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+
+import org.elasticsearch.client.transport.TransportClient;
+import org.elasticsearch.common.settings.Settings;
+import org.elasticsearch.common.transport.TransportAddress;
+import org.elasticsearch.transport.client.PreBuiltTransportClient;
+
+/**
+ * es连接测试
+ * @author Administrator
+ *
+ */
+public class EsDemo {
+   private TransportClient client = null;
+   
+   
+   public void getConnection() throws Exception {
+	   TransportClient client = new PreBuiltTransportClient(Settings.EMPTY)
+	   .addTransportAddress(new TransportAddress(InetAddress.getByName("140.143.122.115"),9200));
+   }
+}

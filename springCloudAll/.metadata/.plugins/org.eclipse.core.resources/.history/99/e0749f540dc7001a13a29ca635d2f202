@@ -1,0 +1,17 @@
+/**
+ * 
+ */
+package top.anets.api.service;
+
+import java.util.Map;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+
+/**
+ * @author Administrator
+ *
+ */
+@RequestMapping("/member/test")
+public interface TestApiService {
+   public Map<String,Object> test(Integer id,String name);
+}

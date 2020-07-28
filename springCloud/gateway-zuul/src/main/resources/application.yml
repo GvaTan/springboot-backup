@@ -1,0 +1,15 @@
+server:
+  port: 7600
+
+spring:
+  application:
+    name: gateway-zuul
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://anets:2011199033@localhost:7776/eureka/
+
+zuul:
+  routes:
+    user-consumer: /user/**    

@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package top.anets.api.service.impl;
+
+/**
+ * @author Administrator
+ *
+ */
+public class MemberServiceImpl {
+
+}

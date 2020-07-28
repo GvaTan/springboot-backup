@@ -1,0 +1,13 @@
+/**
+ * 
+ */
+package top.anets.service;
+
+/**
+ * @author Administrator
+ *
+ */
+public interface UserService {
+//	根据openid查用户
+   User findUserByOpenid(String openid);
+}

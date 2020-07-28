@@ -1,0 +1,17 @@
+/**
+ * 
+ */
+package top.anets.annotation;
+
+import java.lang.annotation.Retention;
+
+/**
+ * @author Administrator
+ *自定义注解类的使用
+ *@Retention(RetentionPolicy.RUNTIME)//声明注解的生命周期
+ *@Target(ElementType.METHOD)//生命注解的作用域
+ */
+@Retention()
+public @interface AccessLimit {
+
+}

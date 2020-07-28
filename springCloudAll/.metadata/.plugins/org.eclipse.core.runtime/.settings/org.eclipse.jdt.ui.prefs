@@ -1,0 +1,21 @@
+content_assist_autoactivation_delay=200
+content_assist_autoactivation_triggers_java=.ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghigklmnopqrstuvwxya
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="top.anets.vo.Result"><rhs name\="top.anets.vo.Result"/></lhs><lhs name\="java.lang.Enum"><rhs name\="java.lang.annotation.ElementType"/><rhs name\="java.lang.annotation.RetentionPolicy"/></lhs><lhs name\="java.util.Map"><rhs name\="org.apache.commons.collections.map.HashedMap"/><rhs name\="java.util.HashMap"/></lhs><lhs name\="org.apache.shiro.authc.HostAuthenticationToken"><rhs name\="org.apache.shiro.authc.UsernamePasswordToken"/></lhs><lhs name\="org.apache.shiro.authc.AuthenticationToken"><rhs name\="org.apache.shiro.authc.UsernamePasswordToken"/></lhs><lhs name\="org.apache.shiro.authc.RememberMeAuthenticationToken"><rhs name\="org.apache.shiro.authc.UsernamePasswordToken"/></lhs><lhs name\="org.apache.shiro.authc.UsernamePasswordToken"><rhs name\="org.apache.shiro.authc.UsernamePasswordToken"/></lhs><lhs name\="top.anets.base.Result"><rhs name\="top.anets.base.Result"/></lhs></history>
+content_assist_number_of_computers=17
+eclipse.preferences.version=1
+org.eclipse.jdt.ui.formatterprofiles.version=18
+org.eclipse.jdt.ui.javadoc=true
+org.eclipse.jdt.ui.text.custom_code_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates><template autoinsert\="false" context\="methodcomment_context" deleted\="false" description\="Comment for non-overriding methods" enabled\="true" id\="org.eclipse.jdt.ui.text.codetemplates.methodcomment" name\="methodcomment">/**&\#13;\r\n* &\#13;\r\n*${tags} &\#13;\r\n*/</template></templates>
+spelling_ignore_ampersand_in_properties=true
+spelling_ignore_digits=true
+spelling_ignore_java_strings=true
+spelling_ignore_mixed=true
+spelling_ignore_non_letters=true
+spelling_ignore_sentence=true
+spelling_ignore_single_letters=true
+spelling_ignore_upper=true
+spelling_ignore_urls=true
+spelling_locale_initialized=true
+spelling_user_dictionary_encoding=GBK
+useAnnotationsPrefPage=true
+useQuickDiffPrefPage=true

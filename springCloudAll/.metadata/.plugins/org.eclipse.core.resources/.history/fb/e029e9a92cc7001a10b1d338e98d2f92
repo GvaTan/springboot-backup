@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package top.anets.feign;
+
+/**
+ * @author Administrator
+ *
+ */
+public class MemberFeign extends MemberS{
+
+}

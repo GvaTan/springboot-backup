@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package top.anets.realm;
+
+/**
+ * @author Administrator
+ *
+ */
+public class ShiroUserRealm {
+
+}

@@ -1,0 +1,16 @@
+server:
+  port: 8081
+#关于Dubbo配置   
+dubbo:
+  scan:
+    basePackages: top.anets    #扫描dubbo注解的包路径
+  application:              #应用名称
+    name: provider-user     #一个接口对应一个服务名称,
+                            #如果一个接口有多个实现类,则名称也应该相同
+  registry:
+    address: zookeeper://140.143.122.115:2181
+  protocol:  #指定协议
+    name: dubbo  #使用dubbo协议(tcp-ip)  web-controller直接调用sso-Service
+                 #port是dubbo协议内部的通信端口
+    port: 20880  #每一个服务都有自己特定的端口 不能重复.
+

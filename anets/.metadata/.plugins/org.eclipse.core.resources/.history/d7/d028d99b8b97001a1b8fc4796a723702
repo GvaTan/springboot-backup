@@ -1,0 +1,20 @@
+package top.anets.service.impl;
+
+import org.springframework.stereotype.Service;
+
+import com.github.pagehelper.PageHelper;
+
+import top.anets.service.LogService;
+import top.anets.vo.Page;
+
+@Service
+public class LogServiceImpl implements LogService{
+
+	@Override
+	public Page getLogs(Integer current, Integer limit) {
+		PageHelper.startPage(current,limit);
+		
+		return null;
+	}
+    
+}

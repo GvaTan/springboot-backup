@@ -1,0 +1,15 @@
+/**
+ * 
+ */
+package top.anets.service;
+
+import org.springframework.cloud.openfeign.FeignClient;
+
+/**
+ * @author Administrator
+ *
+ */
+@FeignClient(name = "user-provider")
+public interface UserService {
+    
+}

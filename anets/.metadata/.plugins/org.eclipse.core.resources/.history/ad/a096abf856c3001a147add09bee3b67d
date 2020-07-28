@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>支付成功</title>
+	<style>
+        .all{
+        	width:100%;
+        	position: absolute;
+        	top:50%;
+        	left: 50%;
+        	transform:translate(-50%,-50%);
+        	font-size: 30px;
+        	text-align: center;
+        }
+	</style>
+</head>
+<body>
+	<div class="all">
+		<h1>支付成功！待发货...</h1>
+		<p>我们将通过短信或者微信的方式告知您物流消息，请注意查收!</p>
+	</div>
+</body>
+</html>

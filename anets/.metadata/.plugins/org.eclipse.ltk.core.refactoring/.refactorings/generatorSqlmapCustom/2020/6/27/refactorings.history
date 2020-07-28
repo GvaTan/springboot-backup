@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;top.anets.domain&apos; to &apos;Pay-System/src/main/java&apos;&#x0D;&#x0A;- Original project: &apos;generatorSqlmapCustom&apos;&#x0D;&#x0A;- Destination element: &apos;Pay-System/src/main/java&apos;&#x0D;&#x0A;- Original element: &apos;generatorSqlmapCustom/src/top.anets.domain&apos;" description="Copy package" destination="=Pay-System/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/" element1="/src&lt;top.anets.domain" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1593431258536" version="1.0"/>
+</session>

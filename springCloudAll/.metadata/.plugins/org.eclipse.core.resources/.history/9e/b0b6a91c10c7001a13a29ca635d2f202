@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package top.anets.aop;
+
+/**
+ * @author Administrator
+ *
+ */
+public class LogAspectServiceApi {
+
+}

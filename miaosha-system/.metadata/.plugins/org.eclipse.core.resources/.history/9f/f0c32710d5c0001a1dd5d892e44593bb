@@ -1,0 +1,35 @@
+package top.anets;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.PropertySource;
+
+import redis.clients.jedis.Jedis;
+
+@SpringBootTest
+class RedisApplicationTests {
+	@Value("${redis.ip}")
+	private String ip;
+	@Value("${redis.port}")
+    private Integer port;
+    
+	@Test
+	void redisDemo() { 
+//	 
+//		System.out.println(ip);
+//		System.out.println(port);
+		
+		
+		
+		Jedis jedis = new Jedis(ip, port);
+		
+		
+		jedis.set("username", "谭洋波");
+		
+		System.out.println(jedis.get("username"));
+		
+	}
+
+}

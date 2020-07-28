@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;top.anets.entity.UserEntity.java&apos; to &apos;User.java&apos;&#x0D;&#x0A;- Original project: &apos;shop-api-member&apos;&#x0D;&#x0A;- Original element: &apos;top.anets.entity.UserEntity.java&apos;&#x0D;&#x0A;- Renamed element: &apos;top.anets.entity.User.java&apos;" description="Rename compilation unit &apos;UserEntity.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;top.anets.entity{UserEntity.java" name="User.java" references="false" stamp="1594870248210" version="1.0"/>
+</session>

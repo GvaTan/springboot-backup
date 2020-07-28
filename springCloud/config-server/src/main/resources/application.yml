@@ -1,0 +1,23 @@
+server:
+  port: 7740
+
+spring:
+  application:
+    name: config-server
+  
+  config:
+      server:
+        git:
+          uri: https://gitee.com/anets/config-demo1.git
+          username: 17601571791
+          password: 2011199033my 
+          search-paths: config-file
+    
+          
+    
+eureka:
+  client:
+    service-url:
+      defaultZone: http://anets:2011199033@localhost:7776/eureka/
+  
+ 

@@ -1,0 +1,23 @@
+/**
+ * 
+ */
+package top.anets;
+
+import org.junit.Test;
+
+import top.anets.utils.HttpUtils;
+
+/**
+ * @author Administrator
+ *
+ */
+public class TestHttpGet {
+    
+	/**
+	*  
+	*/
+	@Test
+	private void fun() {
+		
+	}
+}

@@ -1,0 +1,9 @@
+package top.anets.payTest;
+/**
+ * @author Administrator
+ * 微信jspai支付测试
+ */
+public class WxJsapiPayTest {
+     
+	
+}

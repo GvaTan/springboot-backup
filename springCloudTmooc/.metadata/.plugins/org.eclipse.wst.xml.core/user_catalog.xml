@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+  <uri name="http://mybatis.org/dtd/mybatis-3-mapper.dtd" uri="file:///D:/1Anets.top/MyJava/项目开发/框架资料解耦/mybatis相关/mybatis3-dtd/mybatis-3-mapper.dtd"/>
+</catalog>

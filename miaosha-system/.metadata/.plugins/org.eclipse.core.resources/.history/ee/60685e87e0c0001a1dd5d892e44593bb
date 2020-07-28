@@ -1,0 +1,18 @@
+/**
+ * 
+ */
+package top.anets.redis;
+
+/**
+ * @author Administrator
+ *
+ */
+public class Snippet {
+	/**
+	*  
+	*/
+	public static void main(String[] args) {
+		存储过程 [模块化编程，可以提高速度]--不用
+	}
+}
+

@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package top.anets.dao;
+
+/**
+ * @author Administrator
+ *
+ */
+public interface UserDao {
+
+}

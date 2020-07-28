@@ -1,0 +1,207 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
+	<script src='${pageContext.request.contextPath}/js/jquery.min.js'></script>
+	 <script src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+	<title>订单信息</title>
+	<style>
+	.all{
+		position: fixed;
+		width:100%;
+		height:100%;
+		padding:10% 4%;
+		font-size: 60px;
+		color:rgba(0,0,0,0.9);
+		
+	}
+
+	.forms{
+		padding: 2px 5px;
+		position: absolute;
+		top:50%;
+		left:50%;
+		width:100%;
+		transform:translate(-50%,-50%);
+		padding:0px 2%;
+	}
+	
+	#form1{
+	 
+	   height:750px;
+	}
+
+	input{
+		outline: none;
+		border: 1px solid #777;
+		border-radius: 5px;
+		float: right;
+		padding: 2px 5px;
+	}
+    .group{
+    	margin-top: 20px;
+    	float:left;
+    	
+    }
+    
+    .group *{
+    float:left}
+   input{
+		outline: none;
+		border: 1px solid #777;
+		border-radius: 5px;
+		float: right;
+		padding: 2px 5px;
+	}
+    
+    .group label{
+       display:inline-block;
+       width:230px;
+       height:90px;
+       line-height:90px;
+       font-size:45px;
+    }
+    
+    .group input{
+    width:70%}
+    input:focus{
+    	border: 1px solid blue;
+    }
+    #submits{
+    	border: 0px;
+    	background-color: rgba(244,90,141,1);
+    	color:white;
+    	padding: 3px 15px;
+    }
+     h1{
+       font-size:65px;
+      
+       padding-left: 15px;
+    }
+    
+    .car ul{
+       margin-left:50px;
+       font-size:45px;
+    }
+	</style>
+</head>
+
+<body>
+	<div class="all">
+		<div class="forms">
+			<form id="form1" onsubmit="return false" class="form-horizontal" role="form">
+			<h1 style="border-left:10px solid rgba(244,90,141,1)">补充收货信息</h1>
+				  <div class="group">
+				  	  <label for="">收货人：	</label><input name="namez" type="text">
+				  </div>
+				  <div class="group">
+				  	  <label for="">联系手机a： ${payInfo.info}	</label>
+				  </div>
+				  <div class="group">
+				  	  <label for="">联系微信：	</label><input name="vx" type="text" placeholder="">
+				  </div>
+				  <div class="group">
+				  	  <label for="" style="width:26%;height:120px;line-height:120px">收货地址:</label><textarea name="address" style="font-size:40px;margin-left:240px;margin-top:-90px;"  placeholder="省，市，县（区） 街道 门牌号" cols="33"></textarea>
+				  </div>
+				  <div class="group">
+				  	  <label for="">邮政编码：	</label><input type="text" name="code" placeholder="可选">
+				  </div>
+                 
+                  <input style="margin-top:450px" id="submits" type="submit" value="提交订单并支付">
+		    </form>
+		   
+              <div style="margin-top:0px" class="car">
+		    	  <h1 style="border-left:10px solid rgba(244,90,141,1)">我的购物车</h1>
+		    	  
+		    	  <ul>
+		    	      <s:iterator value="#buyz" var="buy">
+					         <li><s:property value="#buy.name"/>:<s:property value="#buy.color" /></li>
+                     </s:iterator>
+		    	  </ul>
+		          </div>
+
+
+
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+  $(function(){
+	  $("#submits").bind('click',function(){
+		  $("#submits").attr('value',"请稍后...");
+		  $.ajax({
+	            //几个参数需要注意一下
+	                type: "POST",//方法类型
+	                dataType: "text",//预期服务器返回的数据类型
+	                url: "/soaiBuy_ticket" ,//url
+	                data: $('#form1').serialize(),
+	                success: function (result) {
+	                    console.log("success");//打印服务端返回的数据(调试用)
+	                   
+	                        //调用微信支付
+	                        
+	                         $("#submits").attr('value',"支付中...");
+	                       
+	                        if (typeof WeixinJSBridge == "undefined"){
+	                        	   if( document.addEventListener ){
+	                        	       document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+	                        	   }else if (document.attachEvent){
+	                        	       document.attachEvent('WeixinJSBridgeReady', onBridgeReady); 
+	                        	       document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+	                        	   }
+	                        	}else{
+	                        	   onBridgeReady();
+	                        }
+	                        
+	                },
+	                error : function(result) {
+	                    console.log(result);
+	                }
+	            });
+        
+        });
+  });
+  
+  
+  function onBridgeReady(){
+	  
+	  var appidz="<s:property value='#payInfo.appId'/>";
+	  var timestampz="<s:property value='#payInfo.timeStamp'/>";
+      var nonceStrz="<s:property value='#payInfo.nonceStr'/>";
+      var packagez="<s:property value='#payInfo.packages'/>";
+      var signTypez="<s:property value='#payInfo.signType'/>";
+      var paySignz="<s:property value='#payInfo.paySign'/>";
+      //alert(timestampz+"|"+nonceStrz+"|"+packagez+"|"+signTypez+"|"+paySignz);
+	   WeixinJSBridge.invoke(
+	      'getBrandWCPayRequest', {
+	         "appId":appidz,     //公众号名称，由商户传入     
+	         "timeStamp":timestampz,         //时间戳，自1970年以来的秒数     
+	         "nonceStr":nonceStrz, //随机串     
+	         "package":packagez,     
+	         "signType":signTypez,         //微信签名方式：     
+	         "paySign":paySignz //微信签名 
+	      },
+	      function(res){
+	      if(res.err_msg == "get_brand_wcpay_request:ok" ) {
+              console.log('支付成功');
+              $("#submits").attr('value',"支付成功");
+              window.location.href="success.html";
+              //支付成功后跳转的页面
+          }else if(res.err_msg == "get_brand_wcpay_request:cancel"){
+       	   console.log('支付取消');
+       	 alert("用户取消，支付失败");
+       	   
+          }else if(res.err_msg == "get_brand_wcpay_request:fail"){
+       	   console.log('支付失败');
+       	 alert("支付失败");
+              WeixinJSBridge.call('closeWindow');
+          }else{
+        	  alert("未知");
+          }
+	   }); 
+	}
+</script>
+</html>

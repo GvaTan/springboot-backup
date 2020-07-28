@@ -1,0 +1,49 @@
+package cn.anets.entity;
+
+public class VxCofig {
+	 private String url;
+     private String appId;
+     private String timestamp;
+     private String nonceStr;
+     private String signature;
+     private String jsapiTicket;
+     
+	public String getUrl() {
+		return url;
+	}
+	public void setUrl(String url) {
+		this.url = url;
+	}
+	public String getJsapiTicket() {
+		return jsapiTicket;
+	}
+	public void setJsapiTicket(String jsapiTicket) {
+		this.jsapiTicket = jsapiTicket;
+	}
+	public String getAppId() {
+		return appId;
+	}
+	public void setAppId(String appId) {
+		this.appId = appId;
+	}
+	public String getTimestamp() {
+		return timestamp;
+	}
+	public void setTimestamp(String timestamp) {
+		this.timestamp = timestamp;
+	}
+	public String getNonceStr() {
+		return nonceStr;
+	}
+	public void setNonceStr(String nonceStr) {
+		this.nonceStr = nonceStr;
+	}
+	public String getSignature() {
+		return signature;
+	}
+	public void setSignature(String signature) {
+		this.signature = signature;
+	}
+     
+     
+}

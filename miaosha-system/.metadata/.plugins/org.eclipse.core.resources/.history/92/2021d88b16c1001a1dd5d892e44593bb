@@ -1,0 +1,60 @@
+/**
+ * 
+ */
+package top.anets.redis;
+
+import java.util.Set;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import redis.clients.jedis.Jedis;
+import redis.clients.jedis.JedisPool;
+
+/**
+ * @author Administrator
+ *
+ */
+@Service
+public class RedisService {
+	@Autowired
+	private JedisPool jedisPool;
+	
+	//增加点赞的方法
+    public void increase(String key,Long id) {
+        try {
+            Jedis jedis = jedisPool.getResource();
+            jedis.zincrby(key, 1.0D, id + "");  //每次为 值 id + ""  加1
+            // 0代表第一个元素,-1代表最后一个元素，保留热度由低到高末尾10个房产，因为zset是排序的，
+            // 所以说默认的是从低到高，我们要保留前十名，我们就要把第一和倒数 第11之间的值移除掉  填坑   ~~这个是个错误，因为如果这样的话，那就永远只有10条了。错误逻辑
+            // 最主要是记住api的用法 这里就注释了~
+            // jedis.zremrangeByRank(HOT_HOUSE_KEY, 0, -11);
+            jedis.close();
+        } catch (Exception e) {
+            
+        }
+
+    }
+    
+    public Set<String> getDesc(String key,int i ,int j) {
+        try {
+            Jedis jedis = jedisPool.getResource();
+            Set<String> set = jedis.zrange(key, i, j);
+            jedis.close();
+            return set;
+            
+        } catch (Exception e) {
+            return null;
+        }
+
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+}

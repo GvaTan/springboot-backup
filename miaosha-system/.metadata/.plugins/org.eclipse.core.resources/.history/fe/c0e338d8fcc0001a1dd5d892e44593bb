@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package top.anets.redis;
+
+/**
+ * @author Administrator
+ *
+ */
+public enum RedisKey {
+   
+}

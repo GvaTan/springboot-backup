@@ -1,0 +1,58 @@
+/**
+ * 
+ */
+package top.anets.domain;
+
+import javax.net.ssl.SSLContext;
+
+/**
+ * 微信支付的一些相关配置
+ * @author Administrator
+ * 
+ */
+public class VxConfig {
+	 /**
+     * 公众号appId
+     */
+    private String appId;
+
+    /**
+     * 公众号appSecret
+     */
+    private String appSecret;
+
+    /**
+     * 小程序appId
+     */
+    private String miniAppId;
+
+    /**
+     * app应用appid
+     */
+    private String appAppId;
+
+    /**
+     * 商户号
+     */
+    private String mchId;
+
+    /**
+     * 商户密钥
+     */
+    private String mchKey;
+
+    /**
+     * 商户证书路径
+     */
+    private String keyPath;
+
+    /**
+     * 证书内容
+     */
+    private SSLContext sslContext;
+
+    /**
+     * 初始化证书
+     * @return
+     */
+}

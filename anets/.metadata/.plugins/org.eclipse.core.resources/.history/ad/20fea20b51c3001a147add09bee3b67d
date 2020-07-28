@@ -1,0 +1,19 @@
+/**
+ * 
+ */
+package top.anets;
+
+import org.junit.Test;
+
+import top.anets.utils.HttpUtils;
+
+/**
+ * @author Administrator
+ *
+ */
+public class TestHttpGet {
+    
+	public static void main(String[] args) {
+		System.out.println("s");
+	}
+}

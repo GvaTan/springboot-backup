@@ -1,0 +1,88 @@
+package top.anets.utils;
+
+import java.io.UnsupportedEncodingException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URLEncoder;
+import java.util.Date;
+import java.util.Map;
+
+import com.google.gson.Gson;
+
+public class WeChat {
+	public static String ACCESS_TOKEN;
+	
+	public static String JSAPI_TICKET;
+	
+	public static String APPID="wx4648a3be714ccd3f";
+	
+	public static String SECREAT="6307a227fae2d9a3e3b3179c05bc4686";
+
+//	nonceStr随机串
+	public static String NONCESTR="gvatan";
+
+//	时间戳
+	public static String URL="http://souainet.top/soai/";
+	
+	public static String TIMESTAMP="123456";
+
+	
+    public static String getAceessToken(){
+    	//获取连接
+    	String url="https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid="+APPID+"&secret="+SECREAT;
+    	String string = HttpUtils.get(url);
+    	System.out.println(string);
+		return string;
+    }
+    
+    
+    public static String getJsApiTicket(String accessToken) throws URISyntaxException {
+    	String url="https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token="+accessToken+"&type=jsapi";
+       
+    	String string = HttpUtils.get(url);
+    	
+		return string;
+    }
+    
+    
+    
+    public static String  getJsApiTicketAuto() throws URISyntaxException {
+    	String tokenJson = getAceessToken();
+    	System.out.println(tokenJson);
+    	Gson gson = new Gson();
+    	Map map = gson.fromJson(tokenJson, Map.class);
+    	String string = (String) map.get("access_token");
+    	String ticket = getJsApiTicket(string);
+    	System.out.println("the ticket is"+ticket);
+    	
+    	Gson gson1 = new Gson();
+    	Map map2 = gson1.fromJson(ticket, Map.class);
+    	String string2 = (String) map2.get("ticket");
+    	System.out.println("the AcsessToken is"+string);
+    	return string2;
+    	
+    }
+    
+    public static String getTimestamp(){
+    System.out.println(new Date().getTime());
+     long time = new Date().getTime()/1000;
+     
+     return String.valueOf(time);
+    }
+    
+    
+    public static String getNonstr(){
+    	//生成随机串
+    		String nonceStr = WXPayUtil.generateNonceStr();
+    		return nonceStr;
+    }
+    
+    public static String getSignature(String ticket,String timestamp,String noncStr){
+    	String string="jsapi_ticket="+ticket+"&noncestr="+noncStr+"&timestamp="+timestamp+"&url="+URL;
+    	System.out.println(string);
+    	String signature = SHAUtils.getSha1(string);
+        return signature;
+    }
+    
+    
+}

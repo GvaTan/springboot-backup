@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package top.anets.web;
+
+/**
+ * @author Administrator
+ *
+ */
+public class GlobalExceptionHandler {
+
+}

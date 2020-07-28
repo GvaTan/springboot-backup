@@ -1,0 +1,20 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://120.55.95.79:3306/pay?characterEncoding=utf-8&useSSL=false
+    username: root
+    password: 2011199033@mysql
+    
+logging:
+  pattern:
+    console: "[%thread] %-5level %logger{36} - %msg%n"
+    
+
+#mybatis
+mybatis:
+  type-aliases-package: top.anets.domain
+  mapper-locations: classpath:/mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true 

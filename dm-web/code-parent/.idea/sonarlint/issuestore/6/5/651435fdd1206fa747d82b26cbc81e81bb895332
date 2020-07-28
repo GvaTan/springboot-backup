@@ -1,0 +1,36 @@
+
+ksquid:S00100I"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÇÛ„¨ÿÿÿÿÿ
+lsquid:S00100‹"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¦ˆÏÿÿÿÿÿ
+Bsquid:S1075O"&Remove this hard-coded path-delimiter.(ú¹íéüÿÿÿÿ
+ksquid:S00100>"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ü¼µùùÿÿÿÿ
+Bsquid:S1075D"&Remove this hard-coded path-delimiter.(ú¹íéüÿÿÿÿ
+Bsquid:S10759"&Remove this hard-coded path-delimiter.(ú¹íéüÿÿÿÿ
+Bsquid:S1075{"&Remove this hard-coded path-delimiter.(–¼”†ùÿÿÿÿ
+^squid:S1192"GDefine a constant instead of duplicating this literal ".java" 15 times.(à¼ğ·
+=squid:S1075p"&Remove this hard-coded path-delimiter.(°Í¿Ã
+=squid:S1075."&Remove this hard-coded path-delimiter.(àÎøÉ
+ksquid:S00100j"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‰ùÍÿÿÿÿÿ
+fsquid:S1192"PDefine a constant instead of duplicating this literal "lowerClassName" 16 times.(’Æˆp
+^squid:S1192""GDefine a constant instead of duplicating this literal "Client" 6 times.(¬î¿ö
+ksquid:S00100T"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·Í™ÿÿÿÿÿ
+>squid:S1075†"&Remove this hard-coded path-delimiter.(‡åİ¶
+Bsquid:S1075Z"&Remove this hard-coded path-delimiter.(ú¹íéüÿÿÿÿ
+`squid:S1192"IDefine a constant instead of duplicating this literal "package" 16 times.(ğÈ“
+Bsquid:S1075e"&Remove this hard-coded path-delimiter.(ú¹íéüÿÿÿÿ
+gsquid:S00100–"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷­¶
+lsquid:S00100€"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(œ…»Åúÿÿÿÿ
+lsquid:S00100¡"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Î†÷éùÿÿÿÿ
+fsquid:S001003"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Û³ùÇ
+bsquid:S1192q"KDefine a constant instead of duplicating this literal "service_dm" 6 times.(§¡ìÆ
+>squid:S1075²"&Remove this hard-coded path-delimiter.(Æ¢“è
+^squid:S1192"GDefine a constant instead of duplicating this literal "table" 16 times.(éıºü
+Bsquid:S1075#"&Remove this hard-coded path-delimiter.(ú¹íéüÿÿÿÿ
+Csquid:S1075œ"&Remove this hard-coded path-delimiter.(‘®î¬ûÿÿÿÿ
+_squid:S1192o"HDefine a constant instead of duplicating this literal "Service" 6 times.(ï“¥´
+Csquid:S1075‘"&Remove this hard-coded path-delimiter.(é”õÿÿÿÿÿ
+fsquid:S00100("NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(®¤•Ô
+fsquid:S00100u"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ìÎå­
+fsquid:S00100_"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ëŠ†
+>squid:S1075½"&Remove this hard-coded path-delimiter.(·ÈŒè
+>squid:S1075§"&Remove this hard-coded path-delimiter.(ÄŞ›Ï
+ksquid:S00100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—«Ûşÿÿÿÿ

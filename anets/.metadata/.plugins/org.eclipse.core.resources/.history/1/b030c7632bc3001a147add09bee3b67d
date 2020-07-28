@@ -1,0 +1,16 @@
+/**
+ * 
+ */
+package top.anets.utils;
+
+import org.springframework.boot.ApplicationRunner;
+import org.springframework.stereotype.Component;
+
+/**
+ * @author Administrator
+ *
+ */
+@Component
+public class PayInit implements ApplicationRunner{
+
+}

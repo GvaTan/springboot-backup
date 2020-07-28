@@ -1,0 +1,5 @@
+package top.anets.service;
+
+public interface LogService {
+
+}

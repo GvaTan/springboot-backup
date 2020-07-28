@@ -1,0 +1,46 @@
+/**
+ * 
+ */
+package top.anets.aspect;
+
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Pointcut;
+import org.springframework.stereotype.Component;
+
+import lombok.extern.slf4j.Slf4j;
+
+/**
+ * @author Administrator
+ *
+ */
+@Slf4j
+@Aspect
+@Component
+public class LogAspect {
+	@Pointcut("bean(*ServiceImpl)")
+     public void logPointcut() {};
+     
+     
+     
+     @Around("logPointcut()")
+     public Object around(ProceedingJoinPoint jp) {
+    	 log.debug("debug start:{}",System.currentTimeMillis());
+    	 
+		try {
+			Object result = jp.proceed();
+			 log.error("error end:{}",System.currentTimeMillis());
+			 return result;
+		} catch (Throwable e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			log.info("info error:{}",e.getMessage());
+			 return null;
+		}
+    	
+    	 
+    	
+     }
+     
+}

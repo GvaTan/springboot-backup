@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete 2 elements from project &apos;dm-base-consumer&apos;&#x0D;&#x0A;- Original project: &apos;dm-base-consumer&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     dm-base-consumer/src/main/java/top.anets.controller&#x0D;&#x0A;     dm-base-consumer/src/main/java/top.anets.service" description="Delete elements" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;top.anets.service" element2="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;top.anets.controller" elements="2" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1591012957292" subPackages="false" version="1.0"/>
+</session>

@@ -1,0 +1,15 @@
+/**
+ * 
+ */
+package top.anets.config;
+
+import org.springframework.context.annotation.Configuration;
+
+/**
+ * @author Administrator
+ *
+ */
+@Configuration
+public class SpringShiroConfig {
+    
+}

@@ -1,0 +1,21 @@
+/**
+ * 
+ */
+package top.anets.demo;
+
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+/**
+ * @author Administrator
+ *
+ */
+
+@RequestMapping("/redis")
+public class RedisController {
+    private String host;
+    private Integer port;
+    
+    
+}

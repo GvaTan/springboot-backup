@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workingSetManager>
+<workingSet editPageId="org.eclipse.jdt.internal.ui.DynamicSourcesWorkingSet" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1587904168805_0" label="Java Main Sources" name="Java Main Sources">
+<item elementID="=00SpringBoot/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=00SpringBoot/src\/main\/resources=/maven.pomderived=/true=/" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.internal.ui.DynamicSourcesWorkingSet" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1587904168824_1" label="Java Test Sources" name="Java Test Sources">
+<item elementID="=00SpringBoot/src\/test\/java=/optional=/true=/=/maven.pomderived=/true=/=/test=/true=/" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1593860346371_3" label="mall-swarm" name="mall-swarm">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/mall-common" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/mall-monitor" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/mall-admin" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/mall-registry" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/mall-security" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/mall-search" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/mall-portal" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/mall-config" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/mall-gateway" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/mall-demo" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/mall-swarm-master" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/mall-mbg" type="4"/>
+</workingSet>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1587904186054_2" label="Window Working Set" name="Aggregate for window 1587904186054"/>
+</workingSetManager>

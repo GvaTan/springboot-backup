@@ -1,0 +1,18 @@
+/**
+ * 
+ */
+package top.anets.api.service;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import top.anets.entity.User;
+
+/**
+ * @author Administrator
+ *
+ */
+public interface MemberService {
+//   使用userId查找用户信息
+	@RequestMapping("/findUserById")
+	User findUserById(Long userId); 
+}

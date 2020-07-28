@@ -1,0 +1,14 @@
+/**
+ * 
+ */
+package top.anets.service;
+
+import top.anets.adapter.MessageAdapter;
+
+/**
+ * @author Administrator
+ *
+ */
+public class EmailService implements MessageAdapter{
+
+}

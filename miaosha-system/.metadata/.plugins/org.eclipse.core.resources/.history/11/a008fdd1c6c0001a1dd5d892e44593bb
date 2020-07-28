@@ -1,0 +1,20 @@
+/**
+ * 
+ */
+package top.anets.demo;
+
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.PropertySource;
+
+/**
+ * @author Administrator
+ *
+ */
+@ConfigurationProperties
+@PropertySource("classpath:/properties/redis.properties")
+public class RedisController {
+    private String host;
+    private Integer port;
+    
+    
+}

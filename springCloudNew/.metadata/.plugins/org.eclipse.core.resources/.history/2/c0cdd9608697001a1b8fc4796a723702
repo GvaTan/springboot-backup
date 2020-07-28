@@ -1,0 +1,14 @@
+package top.anets.service;
+
+import java.util.List;
+
+import top.anets.vo.Page;
+
+/**
+ * @author Administrator
+ *
+ */
+public interface LogService {
+  
+    Page getLogs();
+}

@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package top.anets.interceptor;
+
+/**
+ * @author Administrator
+ *
+ */
+public class AccessIntercaptor {
+
+}

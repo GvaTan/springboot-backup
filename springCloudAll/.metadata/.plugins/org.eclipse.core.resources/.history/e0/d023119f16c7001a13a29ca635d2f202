@@ -1,0 +1,15 @@
+/**
+ * 
+ */
+package top.anets.api.service;
+
+import top.anets.entity.User;
+
+/**
+ * @author Administrator
+ *
+ */
+public interface MemberService {
+//   使用userId查找用户信息
+	User findUserById(Long userId); 
+}

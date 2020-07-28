@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package top.anets.entity;
+
+/**
+ * @author Administrator
+ *
+ */
+public class User {
+
+}

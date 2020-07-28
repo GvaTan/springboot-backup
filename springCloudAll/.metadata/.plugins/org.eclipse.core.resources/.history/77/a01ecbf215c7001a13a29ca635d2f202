@@ -1,0 +1,25 @@
+/**
+ * 
+ */
+package top.anets.api.service.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import top.anets.api.service.MemberService;
+import top.anets.dao.MemberDao;
+import top.anets.entity.User;
+
+/**
+ * @author Administrator
+ *
+ */
+public class MemberServiceImpl implements MemberService{
+    @Autowired
+    private MemberDao memberDao;
+	@Override
+	public User findUserById(Long userId) {
+		// TODO Auto-generated method stub
+		return memberDao.findByID(userId);
+	}
+
+}

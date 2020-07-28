@@ -1,0 +1,20 @@
+package top.anets.payTest;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+/**
+ * @author Administrator
+ * 微信jspai支付测试
+ */
+@Controller
+@RequestMapping("/test")
+public class WxJsapiPayTest {
+	 @RequestMapping("/pay")
+     @ResponseBody
+     public String pay(String code) {
+		 
+		 return null;
+	 }
+}

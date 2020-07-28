@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: user-center
+  cloud:
+    config:         
+      discovery:
+        enabled: true
+        serviceId: config-center    #去config-center配置中心拉取配置
+      profile: dev    #表明要去配置中心  searchLocations: classpath:/configs/{profile}  ，具体目录classpath:/configs/dev 下去找
+      fail-fast: true
+server:
+  port: 0
+  
+  
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://local.register.com:8761/eureka/
+    registry-fetch-interval-seconds: 5
+  instance:
+    lease-expiration-duration-in-seconds: 15
+    lease-renewal-interval-in-seconds: 5
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${random.int}   #random.int是随机的
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
